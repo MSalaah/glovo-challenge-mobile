@@ -10,6 +10,5 @@ object AppConstants {
     const val BASE_URL = "http://%s:3000/api/"
 
     const val MAP_ZOOM = 12f
-
     const val ICONS_MAP_ZOOM = 5.0f
 }
