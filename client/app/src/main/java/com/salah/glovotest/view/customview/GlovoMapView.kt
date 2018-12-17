@@ -70,7 +70,6 @@ class GlovoMapView : MapView {
                 if (latLngList.isNotEmpty()) {
                     val polygonOptions = PolygonOptions()
                             .fillColor(Color.argb(50, 0, 255, 0))
-                            .strokeColor(Color.BLUE)
                             .addAll(latLngList)
 
                     if (glovoGoogleMap != null) {
@@ -147,8 +146,9 @@ class GlovoMapView : MapView {
     }
 
     private fun animateCamera(location: LatLng) {
+        hide()
         if (this.glovoGoogleMap != null) {
-            this.glovoGoogleMap!!.animateCamera(CameraUpdateFactory.newLatLngZoom(location, MAP_ZOOM))
+            this.glovoGoogleMap!!.moveCamera(CameraUpdateFactory.newLatLngZoom(location, MAP_ZOOM))
         }
     }
 
