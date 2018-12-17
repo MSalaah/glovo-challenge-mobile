@@ -1,5 +1,6 @@
 package com.salah.glovotest.network
 
+import com.salah.glovotest.utils.AppConstants
 import com.salah.glovotest.utils.AppConstants.BASE_URL
 
 /**
@@ -8,6 +9,6 @@ import com.salah.glovotest.utils.AppConstants.BASE_URL
 object ApiUtils {
 
     fun getGlovoApi(): IGlovoApi {
-        return ApiClientInstance.getClient(BASE_URL).create(IGlovoApi::class.java)
+        return ApiClientInstance.getClient(String.format(BASE_URL, AppConstants.IP_ADDRESS)).create(IGlovoApi::class.java)
     }
 }
